@@ -52,86 +52,19 @@ function sum(x) {
 let f = sum(5);
 console.log( f(0), f(1), f(2) );
 
-
-
-
-// Задание 1
-let value = +prompt('Введите значение');
-if (typeof value === 'number' && !isNaN(value)) {
-  if (value % 2 === 0) {
-    console.log('Четное число')
-  } else {
-    console.log('Нечетное число')
-  }
-} else {
-  console.log ('Упс, кажется, вы ошиблись')
-}
-
-// Задание 2
-let x;
-if (typeof x === 'number') {
-  console.log('x is a number')
-} else if (typeof x === 'string') {
-  console.log('x is a string')
-} else if (typeof x === 'boolean') {
-  console.log('x is a boolean')
-} else {
-  console.log ('Type of x is not defined')
-}
-
-// Задание 3
-let str = 'Hello!';
-console.log(str.split('').reverse().join(''));
-
 // Задание 4
-let a = Math.floor(Math.random() * 101);
-console.log(a);
+function getIntervalNumbers(a,b) {
+  let i = setInterval(() => {
+    console.log(a++);
+    if (a > b) clearInterval(i);
+  }, 1000)
+}
+
+getIntervalNumbers(5, 15);
 
 // Задание 5
-let arr = [1, 2, 3, 4, 5, 6];
-console.log(arr.length);
-let result = arr.map((item) => console.log(item));
-
-// Задание 6
-let arr = [9, 4, 26, 31, 2];
-let isIdentical = true;
-
-for (let i=1; i < arr.length; i++) {
-  if (arr[i] !== arr[0]) {
-    isIdentical = false;
-    break;
-  } 
+const isExponent = (x, n) => {
+  const result = Math.pow(x, n);
+  console.log(result);
 }
-console.log(isIdentical);
-
-// Задание 7 
-let arr = [3, 5, 72, 94, 15, 4, null, 0, 0, 'string', true];
-let odd = 0;
-let even = 0;
-let zero = 0;
-let allOtherItems = 0;
-arr.forEach(function(item) {
-  if (item !== item*1) {
-    allOtherItems++
-  } else if (item === 0) {
-    zero++
-  } else if (item % 2 === 0) {
-    even++
-  } else if (item % 2 !== 0) {
-    odd++
-  }
-});
-console.log(even);
-console.log(odd);
-console.log(zero);
-console.log(allOtherItems);
-
-// Задание 8
-let myMap = new Map();
-myMap.set('cats', 5);
-myMap.set('dogs', 10);
-myMap.set('fish', 26);
-
-for (let [keys, values] of myMap) {
-  console.log(`Key - ${keys}, Value - ${values}`)
-}
+isExponent(5, 2);
